@@ -1,0 +1,289 @@
+
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salinthon | My E-Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --blue: #3978d9;
+  --pink: #ed79bb;
+  --purple: #a77be8;
+  --dark: #24365b;
+  --light: #f5f7ff;
+}
+* { margin:0; padding:0; box-sizing:border-box; scroll-behavior:smooth; }
+body {
+  font-family:'Prompt',sans-serif;
+  color:var(--dark);
+  background:#fbfaff;
+}
+nav {
+  position:sticky; top:0; z-index:100;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(12px);
+  display:flex; justify-content:space-between;
+  align-items:center; padding:17px 8%;
+  box-shadow:0 3px 20px #253b6810;
+}
+.logo {font-family:'Kanit';font-size:23px;font-weight:700;color:var(--blue)}
+nav ul {display:flex;list-style:none;gap:25px}
+nav a {text-decoration:none;color:var(--dark);font-size:14px}
+nav a:hover {color:var(--pink)}
+.hero {
+  min-height:590px;padding:80px 10%;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:40px;flex-wrap:wrap;
+  background:linear-gradient(120deg,#eaf3ff,#fff0f8,#f3eaff);
+}
+.hero-text {max-width:560px}
+.hello {color:var(--pink);font-weight:600;letter-spacing:2px}
+.hero h1 {font-family:'Kanit';font-size:clamp(36px,6vw,60px);line-height:1.35;margin:15px 0;color:#244f99}
+.hero h1 span {color:var(--pink)}
+.hero p {font-size:16px;line-height:2;color:#53627c}
+.btn {
+  display:inline-block;margin-top:25px;padding:12px 27px;
+  border-radius:30px;text-decoration:none;color:white;
+  background:linear-gradient(90deg,var(--blue),var(--purple));
+  box-shadow:0 6px 20px #6d8ddd55;transition:.3s;
+}
+.btn:hover {transform:translateY(-4px)}
+.profile {
+  width:260px;height:260px;border-radius:50%;
+  background:linear-gradient(135deg,#a9d1ff,#f6a9d6);
+  display:flex;align-items:center;justify-content:center;
+  font-size:100px;box-shadow:0 15px 40px #829bd655;
+  border:9px solid white;margin:auto;
+}
+section {padding:85px 10%;scroll-margin-top:65px}
+.section-title {text-align:center;margin-bottom:45px}
+.section-title h2 {font-family:'Kanit';font-size:35px;color:#315fa8}
+.section-title p {color:#9a86bd;font-size:14px;margin-top:5px}
+.about-grid {
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px
+}
+.card {
+ background:white;padding:28px;border-radius:22px;
+ box-shadow:0 7px 30px #344b7510;border:1px solid #f0edfa;
+ transition:.3s;
+}
+.card:hover {transform:translateY(-5px);box-shadow:0 12px 30px #8a9dc522}
+.card .icon {font-size:35px;margin-bottom:15px}
+.card h3 {color:#4775bc;margin-bottom:10px;font-size:18px}
+.card p {color:#6d7890;line-height:1.9;font-size:14px}
+.skills {background:#f0f5ff}
+.skill-list {display:flex;flex-wrap:wrap;justify-content:center;gap:15px}
+.skill {
+ background:white;padding:13px 24px;border-radius:30px;
+ color:#5475b6;box-shadow:0 3px 15px #8099c51c;font-size:14px
+}
+.project-icon {
+ height:130px;border-radius:15px;
+ background:linear-gradient(135deg,#dceaff,#ffe1f2);
+ display:flex;align-items:center;justify-content:center;
+ font-size:50px;margin-bottom:18px
+}
+.project-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
+.project-card {background:white;padding:18px;border-radius:20px;box-shadow:0 5px 25px #344b7510}
+.project-card h3 {font-size:17px;color:#4775bc;margin-bottom:8px}
+.project-card p {font-size:13px;color:#788198;line-height:1.8}
+.project-card a {display:inline-block;margin-top:12px;color:#d56da9;text-decoration:none;font-size:13px}
+.quote {
+ text-align:center;background:linear-gradient(120deg,#e6efff,#ffebf6);
+ border-radius:25px;padding:40px 20px;
+}
+.quote h2 {font-family:'Kanit';font-size:28px;color:#5579bd;margin-bottom:12px}
+.quote p {color:#66718b;line-height:2}
+.contact {text-align:center;background:#f3f0ff}
+.contact a {color:#597dcb;text-decoration:none}
+footer {text-align:center;padding:25px;background:#263c69;color:white;font-size:13px}
+@media(max-width:650px){
+ nav {padding:15px 5%;flex-wrap:wrap;gap:10px}
+ nav ul {gap:12px;flex-wrap:wrap}
+ nav a {font-size:12px}
+ .hero {text-align:center;padding:65px 7%}
+ .profile {width:210px;height:210px;font-size:80px}
+ section {padding:65px 7%}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">♡ SALINTHON</div>
+  <ul>
+    <li><a href="#home">หน้าแรก</a></li>
+    <li><a href="#about">เกี่ยวกับฉัน</a></li>
+    <li><a href="#portfolio">ผลงาน</a></li>
+    <li><a href="#activities">กิจกรรม</a></li>
+    <li><a href="#contact">ติดต่อ</a></li>
+  </ul>
+</nav>
+
+<!-- หน้าแรก -->
+<header class="hero" id="home">
+  <div class="hero-text">
+    <div class="hello">WELCOME TO MY PORTFOLIO ♡</div>
+    <h1>สวัสดีค่ะ!<br>ฉันชื่อ <span>สลิลธร</span></h1>
+    <p>
+      ยินดีต้อนรับเข้าสู่เว็บไซต์ E-Portfolio ของฉัน
+      เว็บไซต์ที่รวบรวมประวัติส่วนตัว ความรู้ ความสามารถ
+      ผลงาน และกิจกรรมต่าง ๆ ของฉัน
+    </p>
+    <a href="#about" class="btn">รู้จักฉันเพิ่มเติม →</a>
+  </div>
+  <div class="profile" aria-label="รูปตัวอย่างโปรไฟล์">👩🏻‍🎓</div>
+</header>
+
+<!-- เกี่ยวกับฉัน -->
+<section id="about">
+  <div class="section-title">
+    <h2>ABOUT ME</h2>
+    <p>♡ มาทำความรู้จักกับฉัน ♡</p>
+  </div>
+
+  <div class="about-grid">
+    <div class="card">
+      <div class="icon">👩🏻‍🎓</div>
+      <h3>ประวัติส่วนตัว</h3>
+      <p>
+        ชื่อ : สลิลธร จันทวิมล<br>
+        ชื่อเล่น : (เพิ่มชื่อเล่น)<br>
+        สถานศึกษา : ธัญรัตน์<br>
+        สาขา : ศิลป์ธุรกิจการค้าสมัยใหม่
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🌷</div>
+      <h3>ความสนใจ</h3>
+      <p>
+        สนใจเรียนรู้สิ่งใหม่ ๆ
+        การพัฒนาตนเอง เทคโนโลยี
+        ธุรกิจ และการสร้างโอกาสให้กับตัวเอง
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">💎</div>
+      <h3>เป้าหมายในอนาคต</h3>
+      <p>
+        อาชีพในฝัน : คนรวย 💸<br>
+        อยากประสบความสำเร็จ
+        มีธุรกิจเป็นของตัวเอง
+        และมีอิสระทางการเงิน
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ทักษะ -->
+<section class="skills" id="skills">
+  <div class="section-title">
+    <h2>MY SKILLS</h2>
+    <p>♡ ทักษะและความสามารถ ♡</p>
+  </div>
+  <div class="skill-list">
+    <div class="skill">💻 เทคโนโลยี</div>
+    <div class="skill">📊 ธุรกิจการค้า</div>
+    <div class="skill">💬 การสื่อสาร</div>
+    <div class="skill">🎨 ความคิดสร้างสรรค์</div>
+    <div class="skill">📚 การเรียนรู้</div>
+    <div class="skill">🤝 การทำงานร่วมกัน</div>
+  </div>
+</section>
+
+<!-- ผลงาน -->
+<section id="portfolio">
+  <div class="section-title">
+    <h2>MY PORTFOLIO</h2>
+    <p>♡ ผลงานของฉัน ♡</p>
+  </div>
+
+  <div class="project-grid">
+    <div class="project-card">
+      <div class="project-icon">🌐</div>
+      <h3>ผลงานเว็บไซต์ E-Portfolio</h3>
+      <p>การสร้างเว็บไซต์แนะนำตัวเองด้วย HTML และ CSS</p>
+      <a href="https://github.com/tr32220-prog/e-portfolio" target="_blank">ดูผลงานบน GitHub →</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-icon">📈</div>
+      <h3>ผลงานด้านธุรกิจ</h3>
+      <p>พื้นที่สำหรับเพิ่มผลงานหรือโครงงานด้านธุรกิจการค้า</p>
+    </div>
+
+    <div class="project-card">
+      <div class="project-icon">🎨</div>
+      <h3>ผลงานสร้างสรรค์</h3>
+      <p>พื้นที่สำหรับเพิ่มผลงานออกแบบหรือผลงานอื่น ๆ</p>
+    </div>
+  </div>
+</section>
+
+<!-- กิจกรรม -->
+<section id="activities" class="skills">
+  <div class="section-title">
+    <h2>MY ACTIVITIES</h2>
+    <p>♡ กิจกรรมและประสบการณ์ ♡</p>
+  </div>
+
+  <div class="about-grid">
+    <div class="card">
+      <div class="icon">🏫</div>
+      <h3>กิจกรรมในสถานศึกษา</h3>
+      <p>เพิ่มรูปภาพและรายละเอียดกิจกรรมที่เคยเข้าร่วม</p>
+    </div>
+    <div class="card">
+      <div class="icon">🏆</div>
+      <h3>เกียรติบัตร</h3>
+      <p>เพิ่มรูปเกียรติบัตรและประกาศนียบัตรของตนเอง</p>
+    </div>
+    <div class="card">
+      <div class="icon">🌟</div>
+      <h3>ประสบการณ์</h3>
+      <p>บันทึกประสบการณ์และสิ่งที่ได้เรียนรู้จากกิจกรรมต่าง ๆ</p>
+    </div>
+  </div>
+</section>
+
+<!-- คติประจำใจ -->
+<section>
+  <div class="quote">
+    <h2>MY INSPIRATION ✨</h2>
+    <p>
+      "ความสำเร็จไม่ได้เกิดขึ้นในวันเดียว<br>
+      แต่เกิดจากการพัฒนาตัวเองในทุก ๆ วัน"
+    </p>
+  </div>
+</section>
+
+<!-- ติดต่อ -->
+<section id="contact" class="contact">
+  <div class="section-title">
+    <h2>CONTACT ME</h2>
+    <p>♡ สามารถติดตามผลงานของฉันได้ที่ ♡</p>
+  </div>
+  <div class="card">
+    <div class="icon">💌</div>
+    <h3>GitHub</h3>
+    <p>ติดตามผลงานและโปรเจกต์ของฉัน</p>
+    <p>
+      <a href="https://github.com/tr32220-prog/e-portfolio"
+      target="_blank">github.com/tr32220-prog/e-portfolio</a>
+    </p>
+  </div>
+</section>
+
+<footer>
+  © 2026 SALINTHON JANTHAWIMON | MY E-PORTFOLIO ♡
+</footer>
+
+</body>
+</html>
